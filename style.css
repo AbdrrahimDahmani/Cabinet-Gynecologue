@@ -1,0 +1,22 @@
+:root {
+    --lavender: #CDC7E5;
+    --light-green: #73ab84;
+    --mid-blue: #3e61a3;
+    --dark-blue: #0e0f19;
+    --deep-purple: #371b2f;
+    --off-white-cream: #968a46;
+
+    --background-color: #e7ecef;
+    --navbar-color: #6096ba;
+    --highlight: #a3cef1;
+}
+
+*{
+    font-style: Verdana,Geneva,sans-serif;
+    font-display: black;
+}
+
+#custom-navbar{
+    background-color: #6096ba;
+    font-weight:600;
+}
