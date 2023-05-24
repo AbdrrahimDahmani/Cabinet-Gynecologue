@@ -15,7 +15,7 @@
         include "get_personal_info.php";
     ?>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg px-4" style="background-color: #6096ba; font-weight: 600;">
+    <nav class="navbar navbar-expand-lg px-4" style="background-color: #FFFFFF; font-weight: 600;">
         <!-- Navbar Container -->
         <div class="container-fluid">
             <!-- Welcome Header -->

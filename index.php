@@ -1,8 +1,3 @@
- <?php
-    // Redirect to login page
-	 header("Location: LoginView/login.php");
-?> 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,7 +26,7 @@
 
         <div class="navbar-collapse collapse" id="navbarCollapse">
           <ul class="navbar-nav navbar-nav-scroll">
-            <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="">About</a></li>
           </ul>
         </div>
@@ -39,8 +34,8 @@
 
         <!-- Button START -->
         <div class="header-buttons ms-xl-auto">
-          <button type="button" class="log btn btn-outline-dark">Login</button>
-          <button type="button" class="dark-outline-hover btn btn-dark">
+          <button type="button" class="log btn btn-outline-dark" onClick="window.location.href='LoginView/login.php'">Login</button>
+          <button type="button" class="dark-outline-hover btn btn-dark" onClick="window.location.href='RegisterView/register.php'">
             Sign up
           </button>
         </div>
@@ -61,7 +56,7 @@
             experienced team are here to provide you with personalized and high
             quality care.
           </p>
-          <button type="button" class="consult-btn btn btn-outline-dark">
+          <button type="button" class="consult-btn btn btn-outline-dark" onClick="window.location.href='LoginView/login.php'">
             Consulter Maintenant
           </button>
         </div>
