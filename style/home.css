@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.logo {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.header-buttons button {
+  width: 5.3rem;
+  border-radius: 0.68rem;
+  background-color: #d59ab7;
+  color: white;
+  border: none;
+}
+.header-buttons button:hover {
+  background-color: #a32160;
+  color: white;
+}
+.header-buttons .log {
+  background-color: #b94b6d;
+}
+.navbar-expand-md .navbar-collapse {
+  justify-content: center;
+}
+.navbar-brand .logo-text {
+  font-family: 'Roboto Slab', serif;
+}
+.logo-text span {
+  color: #a32160;
+}
+header {
+  border-bottom: 1px solid #333333;
+}
+.container {
+  display: flex;
+  margin-top: 12vh;
+  justify-content: space-between;
+}
+.welcome-par {
+  padding-top: 2rem;
+  width: 32vw;
+}
+.welcome-par h1 {
+  font-family: sans-serif;
+  font-weight: 300;
+}
+.welcome-par p {
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  line-height: 2rem;
+}
+.image-container img {
+  width: 35vw;
+  height: 50vh;
+}
+.welcome-par .consult-btn {
+  border: none;
+  background-color: #b94b6d;
+  color: white;
+}
+
+.cardContainer {
+  margin-top: 2rem;
+}
+.cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.card {
+  width: 220px;
+  height: 321px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.card:hover p {
+  color: black;
+}
+
+.card p {
+  font-size: 17px;
+  color: #4c5656;
+  margin-top: 30px;
+  z-index: 1000;
+  transition: color 0.3s ease-out;
+}
