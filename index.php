@@ -1,7 +1,7 @@
-<!-- <?php
+ <?php
     // Redirect to login page
-	// header("Location: LoginView/login.php");
-?> -->
+	 header("Location: LoginView/login.php");
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
