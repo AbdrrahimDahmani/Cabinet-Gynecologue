@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2023 at 10:59 PM
+-- Generation Time: May 31, 2023 at 02:59 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -130,6 +130,7 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`patient_ID`, `username`) VALUES
+(3, 'abnoss'),
 (1, 'patientUser');
 
 -- --------------------------------------------------------
@@ -145,17 +146,17 @@ CREATE TABLE `personal_info` (
   `dob` varchar(10) NOT NULL,
   `email` varchar(225) NOT NULL,
   `phone_number` varchar(10) NOT NULL,
-  `sex` varchar(1) NOT NULL,
-  `gender` varchar(225) NOT NULL
+  `sex` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `personal_info`
 --
 
-INSERT INTO `personal_info` (`ID`, `first_name`, `last_name`, `dob`, `email`, `phone_number`, `sex`, `gender`) VALUES
-(1, 'Jane', 'Smith', '1999-11-30', 'janesmith@email.com', '7025000893', 'F', 'Other'),
-(2, 'John', 'Doe', '1999-01-14', 'johndoe@email.com', '7024009998', 'F', 'Man');
+INSERT INTO `personal_info` (`ID`, `first_name`, `last_name`, `dob`, `email`, `phone_number`, `sex`) VALUES
+(1, 'Jane', 'Smith', '1999-11-30', 'janesmith@email.com', '7025000893', 'F'),
+(2, 'John', 'Doe', '1999-01-14', 'johndoe@email.com', '7024009998', 'F'),
+(3, 'aboud', 'abnossa', '2023-05-02', 'ab@ab.ab', '25468252', 'M');
 
 -- --------------------------------------------------------
 
@@ -196,6 +197,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `password`) VALUES
+('abnoss', 'ab'),
 ('doctorUser', 'Welcome1!'),
 ('patientUser', 'Welcome1!'),
 ('sysAdmin', 'Welcome1!');
@@ -271,7 +273,7 @@ ALTER TABLE `medication`
 -- AUTO_INCREMENT for table `personal_info`
 --
 ALTER TABLE `personal_info`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

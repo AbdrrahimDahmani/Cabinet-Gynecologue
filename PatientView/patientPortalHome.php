@@ -77,7 +77,7 @@
                                     <th scope="col">Last</th>
                                     <th scope="col">Date of Birth</th>
                                     <th scope="col">Sex </th>
-                                    <th scope="col">Gender </th>
+                                   
                                     <th scope="col">Email </th>
                                     <th scope="col">Phone Number </th>
                                 </tr>
@@ -88,7 +88,6 @@
                                     <td><?php print($lastName); ?></td>
                                     <td><?php print(date('F j, Y', strtotime($patientDOB))) ?></td>
                                     <td><?php print($patientSex) ?></td>
-                                    <td><?php print($patientGender) ?></td>
                                     <td><?php print($patientEmail) ?></td>
                                     <td><?php print('('.substr($patientPhone,0,3).') '.substr($patientPhone,3,3).'-'.substr($patientPhone,6,4))?></td>
                                 </tr>
@@ -153,30 +152,8 @@
                                     value="M" name="male" <?php if($patientSex=='M'){ echo "checked"; }?>>
                                 <label class="form-check-label" for="maleGender">Male</label>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="newSex" id="interSex"
-                                    value="I" <?php if($patientSex=='I'){ echo "checked"; }?>>
-                                <label class="form-check-label" for="Intersex">Intersex</label>
-                            </div>
                         </div>
-                        <div class="col-md-6 mb-4 pb-2">
-                            <h6 class="mb-2 pb-1">Gender</h6>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="newGender" id="femaleGender"
-                                    value="Woman" <?php if($patientGender=='Woman'){ echo "checked"; }?> >
-                                <label class="form-check-label" for="femaleGender">Woman</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="newGender" id="maleGender"
-                                    value="Man"  <?php if($patientGender=='Man'){ echo "checked"; }?>>
-                                <label class="form-check-label" for="maleGender">Man</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="newGender" id="otherGender"
-                                    value="Other"  <?php if($patientGender=='Other'){ echo "checked"; }?> >
-                                <label class="form-check-label" for="otherGender">Other</label>
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="row">

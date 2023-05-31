@@ -1,0 +1,25 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button .btn {
+  background-image: linear-gradient(
+    to left,
+    #ea6692 0%,
+    hsl(340, 76%, 66%) 100%
+  );
+  color: #fff;
+  width: 8rem;
+  padding: 6.2px;
+  margin: 4px;
+}
+.button .btn:hover {
+  background-image: linear-gradient(to right, #dd5e89 0%, #dd5e89 100%);
+
+  color: #fff;
+}
+.container a {
+  text-decoration: none;
+  color: #c9186d;
+}

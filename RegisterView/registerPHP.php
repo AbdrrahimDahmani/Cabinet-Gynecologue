@@ -1,11 +1,11 @@
 <?php
-    echo $_POST['firstName'], $_POST['lastName'], $_POST['dob'], $_POST['gender'], $_POST['sex'], $_POST['email'], $_POST['phoneNumber'];
+    echo $_POST['firstName'], $_POST['lastName'], $_POST['dob'], $_POST['sex'], $_POST['email'], $_POST['phoneNumber'];
 
-    if (!empty($_POST['username']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['dob']) && !empty($_POST['gender']) && !empty($_POST['sex']) && !empty($_POST['email']) && !empty($_POST['phoneNumber']) && !empty($_POST['password'])) {
+    if (!empty($_POST['username']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['dob']) && !empty($_POST['sex']) && !empty($_POST['email']) && !empty($_POST['phoneNumber']) && !empty($_POST['password'])) {
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
         $dob = $_POST['dob'];
-        $gender = $_POST['gender'];
+        
         $sex = $_POST['sex'];
         $email = $_POST['email'];
         $phoneNumber = $_POST['phoneNumber'];
@@ -32,8 +32,8 @@
 
         // insert into personal_info
 
-        $sql = "INSERT INTO personal_info (first_name, last_name, dob, email, phone_number, sex, gender) VALUES
-        ('$firstName', '$lastName', '$dob', '$email', '$phoneNumber', '$sex', '$gender');";
+        $sql = "INSERT INTO personal_info (first_name, last_name, dob, email, phone_number, sex) VALUES
+        ('$firstName', '$lastName', '$dob', '$email', '$phoneNumber', '$sex');";
 
         if($conn->query($sql) === TRUE){
             echo "<br>", "Inserted into personal_info", "<br>";

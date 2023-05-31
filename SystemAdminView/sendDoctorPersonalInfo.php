@@ -91,21 +91,6 @@ if (array_key_exists('oldUsername', $_POST) and array_key_exists('oldID', $_POST
         }
     }
 
-    // SEX
-    if (array_key_exists('newgender', $_POST) and $_POST['newgender'] != null) {
-        $newsex = $_POST['newgender'];
-
-        if ($newsex != 'Man' && $newsex != 'Woman' && $newsex != 'Other') {
-            header("Location: doctorInfo.php?id=$oldID&username=$oldUsername&gendererr=Enter only Woman/Man/Other");
-        } else {
-            $sql = "UPDATE personal_info SET gender='$newsex' WHERE ID='$oldID'";
-            if ($conn->query($sql)) {
-                header("Location: doctorInfo.php?id=$oldID&username=$oldUsername");
-            } else {
-                echo "ruh roh didn't update gender";
-            }
-        }
-    }
 
     // EMAIL
     if (array_key_exists('newemail', $_POST) and $_POST['newemail'] != null) {

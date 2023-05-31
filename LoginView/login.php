@@ -7,19 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="icon" type="image/x-icon" href="../images/baby-newborn.ico">
+    <link rel="stylesheet" href="../style/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
 <body>
-    <section class="vh-100" style="background-color: #508bfc;">
+    <section class="vh-100" style="background-image: linear-gradient(to right, #dd5e89 0%, #dd5e89 100%);">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
+                        <div class="card-body p-5">
 
-                            <h3 class="mb-5">Sign in</h3>
+                            <h3 class="mb-5 text-center">Sign in</h3>
                             <?php
                                 if(isset($_GET['err'])){
                                 echo '<p style="color: red;">',$_GET['err'],'</p>';
@@ -43,15 +44,16 @@
                                         placeholder="Enter Password" name="password" required>
                                 </div>
 
-                                <div class="col mb-2 mr-sm-2">
+                                <div class="col mb-2 mr-sm-2"> 
+                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck" name="doctor">
                                     <label class="form-check-label" for="inlineFormCheck">
                                         I am a Doctor 
                                     </label>
-                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck" name="doctor">
                                 </div>
                                 <!-- Checkbox -->
-
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                                <div class="button">
+                                    <button class="btn " type="submit">Login</button>
+                                </div>
                                 
                             </form>
                             <div class="container">

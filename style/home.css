@@ -181,6 +181,8 @@ header {
 .screen-body {
   display: flex;
   background-image: linear-gradient(to right, #dd5e89 0%, #dd5e89 100%);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .screen-body-item {

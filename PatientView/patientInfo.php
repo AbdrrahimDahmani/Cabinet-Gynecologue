@@ -27,7 +27,6 @@
     $patientPhone = $row["phone_number"];
     //geting sex 
     $patientSex = $row['sex']; 
-    //geting gender 
-    $patientGender = $row['gender']; 
+    
 
 ?>

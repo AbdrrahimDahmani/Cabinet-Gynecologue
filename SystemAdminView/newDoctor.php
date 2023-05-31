@@ -87,33 +87,6 @@
                                         name="male">
                                     <label class="form-check-label" for="maleGender">Male</label>
                                 </div>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sex" id="maleGender" value="I"
-                                        name="male">
-                                    <label class="form-check-label" for="maleGender">Intersex</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <h6 class="mb-2 pb-1">Gender</h6>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="femaleGender"
-                                        value="Woman" checked>
-                                    <label class="form-check-label" for="femaleGender">Woman</label>
-                                </div>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="maleGender"
-                                        value="Man">
-                                    <label class="form-check-label" for="maleGender">Man</label>
-                                </div>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="otherGender"
-                                        value="Other">
-                                    <label class="form-check-label" for="otherGender">Other</label>
-                                </div>
                             </div>
                         </div>
                         <div class="row">

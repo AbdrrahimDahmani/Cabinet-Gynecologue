@@ -72,17 +72,6 @@
                             ?>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                            <label class="form-label" for="gender">Gender</label>
-                            <input type="text" id="newgender" class="form-control form-control-lg" name="newgender" placeholder="<?php echo $row['gender'] ?>">
-                            <?php
-                            if (isset($_GET['gendererr'])) {
-                                echo '<p style="color: red;">', $_GET['gendererr'], '</p>';
-                            }
-                            ?>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mb-4">

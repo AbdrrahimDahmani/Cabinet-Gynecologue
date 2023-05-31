@@ -69,7 +69,7 @@
         $email = $patientInfo[0]['email'];
         $phone = $patientInfo[0]['phone_number'];
         $sex = $patientInfo[0]['sex'];
-        $gender = $patientInfo[0]['gender'];
+        
         $age = date_diff(date_create($dob), date_create(date("Y-m-d")))->format('%Y');
         $phoneFormatted = "(" . substr($phone, 0, 3) . ') ' . substr($phone, 3, 3) . '-' . substr($phone, 6);
         

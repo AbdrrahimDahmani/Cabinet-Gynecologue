@@ -53,19 +53,10 @@
             header("Location: patientPortalHome.php");
         }
     }
-    #checking if gender was sent 
-    if(array_key_exists('newGender', $_POST) and $_POST['newGender'] != null){
-        //get new gender
-        $newGender = $_POST['newGender']; 
-        #query to update personal info with new dob 
-        $updateGenderQuery = "UPDATE personal_info set gender = '$newGender' WHERE ID = $patientID;"; 
-        if($conn->query($updateGenderQuery) == TRUE){
-            header("Location: patientPortalHome.php");
-        }
-    }
+
     #checking if phone number was sent 
     if(array_key_exists('newphoneNumber', $_POST) and $_POST['newphoneNumber'] != null){
-        //get new gender
+       
         $newPhone = $_POST['newphoneNumber']; 
         #query to update personal info with new dob 
         $updatePhoneQuery = "UPDATE personal_info set phone_number = '$newPhone' WHERE ID = $patientID;"; 

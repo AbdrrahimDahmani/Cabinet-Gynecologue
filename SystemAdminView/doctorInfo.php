@@ -30,7 +30,6 @@
             $thisEmail = $row['email'];
             $thisPhoneNumber = $row['phone_number'];
             $thisSex = $row['sex'];
-            $thisGender = $row['gender'];
         } else {
             die("Connection failed: " . $conn->connect_error);
         }
