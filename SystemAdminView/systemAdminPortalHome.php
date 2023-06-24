@@ -15,7 +15,15 @@
   </head>
 
   <body>
-    <?php include "../checkSignedIn.php" ?>
+    <?php include "../checkSignedIn.php";
+          include "../connect_server.php";
+          $sql="select count(*) from doctors;";
+          $countDoc=$conn->query($sql);
+          $sqlPatient="select count(*) from patients;";
+          $countPatient=$conn->query($sqlPatient);
+          $sqlAppointment="select count(*) from appointments;";
+          $countAppointment=$conn->query($sqlAppointment);
+    ?>
     <div class="container-fluid">
       <?php include "sideNavBar.php" ?>
       <section class="dashboard">
@@ -30,61 +38,20 @@
               <div class="box box1">
                 <i class="fa-solid fa-user-tie"></i>
                 <span class="text">Total Doctors</span>
-                <span class="number">10</span>
+                <span class="number"><?php echo $countDoc->fetch_assoc()['count(*)']?> </span>
               </div>
               <div class="box box2">
                 <i class="fa-solid fa-people-group"></i>
                 <span class="text">Total Patient</span>
-                <span class="number">50</span>
+                <span class="number"><?php echo $countPatient->fetch_assoc()['count(*)']?></span>
               </div>
               <div class="box box3">
-                <i class="fa-solid fa-scale-balanced"></i>
+              <i class="fa-solid fa-bed-pulse"></i>
                 <span class="text">Total Appointments</span>
-                <span class="number">25</span>
+                <span class="number"><?php echo $countAppointment->fetch_assoc()['count(*)']?></span>
               </div>
             </div>
           </div>
-
-          <div class="activity">
-            <div class="title">
-              <i class="fa-solid fa-clock-rotate-left"></i>
-              <span class="text">Recent Sign Up</span>
-            </div>
-
-            <div class="activity-data">
-              <div class="data">
-                <span class="data-title">Name</span>
-                <span class="data-list">Prem Shahi</span>
-                <span class="data-list">Deepa Chand</span>
-                <span class="data-list">Manisha Chand</span>
-                <span class="data-list">Pratima Shahi</span>
-                <span class="data-list">Man Shahi</span>
-                <span class="data-list">Ganesh Chand</span>
-                <span class="data-list">Bikash Chand</span>
-              </div>
-              <div class="data">
-                <span class="data-title">Email</span>
-                <span class="data-list">premshahi@gmail.com</span>
-                <span class="data-list">deepachand@gmail.com</span>
-                <span class="data-list">prakashhai@gmail.com</span>
-                <span class="data-list">manishachand@gmail.com</span>
-                <span class="data-list">pratimashhai@gmail.com</span>
-                <span class="data-list">manshahi@gmail.com</span>
-                <span class="data-list">ganeshchand@gmail.com</span>
-              </div>
-              <div class="data">
-                <span class="data-title">Joined</span>
-                <span class="data-list">2022-02-12</span>
-                <span class="data-list">2022-02-12</span>
-                <span class="data-list">2022-02-13</span>
-                <span class="data-list">2022-02-13</span>
-                <span class="data-list">2022-02-14</span>
-                <span class="data-list">2022-02-14</span>
-                <span class="data-list">2022-02-15</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
 
