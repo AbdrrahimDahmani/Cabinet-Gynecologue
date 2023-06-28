@@ -63,14 +63,19 @@
     <div class="container mt-5">
         <div class="col">
             <div class="card" id="pregnancyCard">
-                <div class="card-header d-flex justify-content-between py-3">
+                <div class="card-header d-flex  py-3">
                     <h3>Pregnancies</h3>
                     <!-- Button to show past pregnancies -->
-                    <tr>
+                        <div class="ms-auto">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PregnanciesModal">
+                            Add Pregnancy
+                        </button>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Show Past Pregnancies
                         </button>
-                    </tr>
+                        </div>
+
+                    
                 </div>
                 <div class="card-body">
                     <!--Single Pregnancy Entry -->
@@ -86,7 +91,7 @@
                         <tbody>
                             <?php
                             //decarling vars
-                            $firstPregancyRow = null;
+                            $firstPregancyRow = [];
                             $countdownRatio = 0;
                             //getting current date and time 
                             $tempDateTime = date('d-m-Y h:i:s a', time());
@@ -98,11 +103,11 @@
                             // create query for pregnancies 
                             $pregnanciesSQL = "SELECT * FROM pregnancies where patient_ID = $patientID;";
                             //get pregnacy rows if found 
-                            $pregnanciesResult = $conn->query($pregnanciesSQL);
 
                             //function to print current pregnancy
-                            if ($pregnancyRow = $pregnanciesResult->fetch_assoc()) {
+                            if ($pregnanciesResult = $conn->query($pregnanciesSQL)) {
                                 //get due date 
+                            while($pregnancyRow = $pregnanciesResult->fetch_assoc()){
                                 $dueDate = $pregnancyRow["due_date"];
                                 //converting due date to immutable 
                                 $dueDateImmutable = new dateTimeImmutable($dueDate);
@@ -110,9 +115,9 @@
                                 $dueDateCountDown = $currentDateTime->diff($dueDateImmutable);
                                 //getting days
                                 $countdownDays = $dueDateCountDown->format('%R%a');
+                                echo $countdownDays;
                                 if ($countdownDays <= 0) {
-                                    echo "<td>No current pregnancies </td>";
-                                    $firstPregancyRow = $pregnancyRow;
+                                    array_push($firstPregancyRow,$pregnancyRow);     
                                 } else {
                                     //converting days left to weeks 
                                     $countdownWeeks = floor($countdownDays / 7);
@@ -134,6 +139,8 @@
                                     );
                                 }
                             }
+                            
+                            }
                             ?>
                         </tbody>
                     </table>
@@ -151,7 +158,41 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Add past pregnancies Modal -->
+    <div class="modal fade" id="PregnanciesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Previous Pregnancies</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                        <div class="card-body">
+                            <form action="addPregnancies.php" method="POST">
+                                    <label for="dueDate" class="form-label">Due Date</label>
+                                    <input type="date" class="form-control mb-3" id="dueDate" name="dueDate">
+                                    <div class="col-md-6 mb-4  pb-2">
+                                        <h6 class="mb-2 pb-1">Sex</h6>
+                                        <div class="form-check form-check-inline mt-2">
+                                            <input class="form-check-input" type="radio" name="sex" id="femaleGender" value="F" name="female" checked>
+                                            <label class="form-check-label" for="femaleGender">Female</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sex" id="maleGender" value="M" name="male">
+                                            <label class="form-check-label" for="maleGender">Male</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary ">Submit</button>
+                            </form>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Display past pregnancies Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -172,8 +213,13 @@
                             <?php
                             //check for first pregnancy row 
                             try {
-                                if ($firstPregancyRow)
-                                    printRow($firstPregancyRow);
+                                if ($firstPregancyRow){
+                                    //  printRow($firstPregancyRow);
+                                    foreach ($firstPregancyRow as $data){
+                                        printRow($data);
+                                    }
+                                }
+                                    
                             } catch (Exception $e) {
                                 print("nevermind");
                             }
